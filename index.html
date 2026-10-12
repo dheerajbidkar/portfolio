@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dheeraj Bidkar | Senior Salesforce Developer</title>
+<meta name="description" content="Portfolio of Dheeraj Bidkar, a Senior Salesforce Developer with 5+ years of experience in Apex, Lightning Web Components, integrations and Agentforce.">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230F63B8'/%3E%3Ctext x='32' y='46' font-size='38' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'%3ED%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F2F5F9;
+    --ink: #12203A;
+    --muted: #4A5873;
+    --sky: #0F63B8;
+    --teal: #0B7F7A;
+    --sun: #E9A93B;
+    --line: #D3DCE8;
+    --display: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+    --body: 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --wrap: 1120px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--body); font-size: 1.0625rem; line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, p, ul, dl, dd { margin: 0; }
+  ul { padding: 0; list-style: none; }
+  a { color: var(--sky); text-underline-offset: 3px; }
+  a:hover { color: var(--ink); }
+  :focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; border-radius: 3px; }
+
+  .wrap { width: min(var(--wrap), 100% - 2.5rem); margin-inline: auto; }
+  .skip {
+    position: absolute; left: 1rem; top: -4rem; background: var(--ink); color: #fff;
+    padding: .6rem 1rem; border-radius: 6px; z-index: 20; text-decoration: none;
+  }
+  .skip:focus { top: 1rem; }
+
+  /* Top band: header and hero share one background */
+  .top-band {
+    position: relative; overflow: hidden; color: #fff;
+    background:
+      radial-gradient(900px 500px at 88% -10%, rgba(14, 170, 160, .45), transparent 60%),
+      radial-gradient(700px 500px at 0% 110%, rgba(233, 169, 59, .18), transparent 60%),
+      linear-gradient(140deg, #0A1731 0%, #0E3470 55%, #0F63B8 100%);
+    border-radius: 0 0 2.75rem 2.75rem;
+  }
+  .clouds { position: absolute; pointer-events: none; fill: #fff; fill-opacity: .06; }
+  .clouds.c1 { right: -60px; bottom: -30px; width: min(680px, 90vw); }
+  .clouds.c2 { left: -80px; top: 90px; width: 360px; fill-opacity: .045; }
+
+  /* Header */
+  .site-head { position: relative; z-index: 2; padding: 1.4rem 0; }
+  .site-head .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; }
+  .brand { display: inline-flex; align-items: center; gap: .75rem; color: #fff; text-decoration: none; font-family: var(--display); font-weight: 700; font-size: 1.2rem; letter-spacing: -.01em; }
+  .brand:hover { color: #fff; }
+  .mark {
+    display: grid; place-items: center; width: 2.5rem; height: 2.5rem; border-radius: 10px;
+    background: linear-gradient(135deg, var(--sun), #F7D488); color: var(--ink);
+    font-weight: 800; font-size: 1rem; letter-spacing: 0;
+  }
+  .site-nav ul { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem .5rem; }
+  .site-nav a {
+    display: block; color: rgba(255, 255, 255, .85); text-decoration: none; font-weight: 500; font-size: .98rem;
+    padding: .5rem .9rem; border-radius: 999px; transition: background .2s ease, color .2s ease;
+  }
+  .site-nav a:hover { background: rgba(255, 255, 255, .12); color: #fff; }
+  .site-nav a.nav-cta { background: var(--sun); color: var(--ink); font-weight: 600; margin-left: .5rem; }
+  .site-nav a.nav-cta:hover { background: #F4BB52; color: var(--ink); }
+
+  /* Hero */
+  .hero { position: relative; z-index: 1; padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(4rem, 8vw, 6.5rem); }
+  .hero-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 2.5rem clamp(2rem, 5vw, 4.5rem); align-items: center; }
+  .status {
+    display: inline-flex; align-items: center; gap: .6rem; padding: .4rem 1rem .4rem .8rem;
+    border: 1px solid rgba(255, 255, 255, .22); background: rgba(255, 255, 255, .08);
+    border-radius: 999px; font-size: .95rem; color: rgba(255, 255, 255, .92);
+  }
+  .status .dot { width: .6rem; height: .6rem; border-radius: 50%; background: #4ADE9A; box-shadow: 0 0 0 4px rgba(74, 222, 154, .22); }
+  .hero h1 {
+    margin-top: 1.5rem; font-family: var(--display); font-weight: 700;
+    font-size: clamp(2.5rem, 5.8vw, 4.7rem); line-height: 1.03; letter-spacing: -.025em;
+    font-variation-settings: "wdth" 88; max-width: 16ch;
+  }
+  .hero-sub { margin-top: 1.5rem; max-width: 54ch; font-size: 1.15rem; color: rgba(255, 255, 255, .8); }
+  .hero-sub strong { color: #fff; font-weight: 600; }
+  .hero-actions { margin-top: 2.25rem; display: flex; flex-wrap: wrap; gap: .85rem; }
+
+  .btn {
+    display: inline-block; font-weight: 600; text-decoration: none; padding: .85rem 1.5rem;
+    border-radius: 999px; border: 2px solid transparent; transition: background .2s ease, color .2s ease, transform .2s ease;
+  }
+  .btn-main { background: var(--sun); color: var(--ink); }
+  .btn-main:hover { background: #F4BB52; color: var(--ink); }
+  .btn-alt { border-color: rgba(255, 255, 255, .55); color: #fff; }
+  .btn-alt:hover { background: #fff; color: var(--ink); }
+
+  .profile-card {
+    padding: 1.75rem; border-radius: 22px;
+    background: rgba(255, 255, 255, .09); border: 1px solid rgba(255, 255, 255, .2);
+    -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+    box-shadow: 0 30px 60px -30px rgba(3, 10, 28, .7);
+  }
+  .card-top { display: flex; align-items: center; gap: 1rem; }
+  .avatar {
+    flex: none; display: grid; place-items: center; width: 4rem; height: 4rem; border-radius: 18px;
+    background: linear-gradient(135deg, var(--sun) 0%, #4FD1C5 100%); color: var(--ink);
+    font-family: var(--display); font-weight: 800; font-size: 1.5rem;
+  }
+  .card-top strong { display: block; font-family: var(--display); font-size: 1.3rem; line-height: 1.2; }
+  .card-top span { display: block; margin-top: .15rem; color: rgba(255, 255, 255, .78); font-size: .98rem; }
+  .card-rows { margin-top: 1.4rem; display: grid; gap: 0; }
+  .card-row { padding: .9rem 0; border-top: 1px solid rgba(255, 255, 255, .16); }
+  .card-row dt { font-size: .9rem; color: rgba(255, 255, 255, .68); }
+  .card-row dd { margin-top: .15rem; font-weight: 500; }
+  .pills { margin-top: .55rem; display: flex; flex-wrap: wrap; gap: .45rem; }
+  .pills li {
+    padding: .3rem .75rem; border-radius: 999px; font-size: .88rem; font-weight: 500;
+    background: rgba(255, 255, 255, .13); border: 1px solid rgba(255, 255, 255, .18);
+  }
+
+  /* Sections */
+  .section { padding: clamp(3.5rem, 8vw, 6.25rem) 0; border-top: 1px solid var(--line); }
+  .section.first { border-top: 0; }
+  .split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.3fr); gap: 2rem clamp(2rem, 5vw, 4.5rem); align-items: start; }
+  .section h2 {
+    font-family: var(--display); font-weight: 700; font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+    line-height: 1.1; letter-spacing: -.02em; font-variation-settings: "wdth" 92;
+  }
+  .split > h2 { position: sticky; top: 1.5rem; }
+  .lede { font-size: 1.2rem; max-width: 60ch; }
+  .lede + .lede { margin-top: 1rem; }
+  .muted { color: var(--muted); }
+
+  .facts { margin-top: 2rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+  .facts li { border-top: 3px solid var(--sky); padding-top: .85rem; }
+  .facts strong { display: block; font-family: var(--display); font-size: 1.15rem; font-weight: 700; line-height: 1.25; }
+  .facts span { display: block; margin-top: .3rem; font-size: .98rem; color: var(--muted); }
+
+  /* Work */
+  .job { position: relative; padding: 0 0 3.25rem 2rem; border-left: 2px solid var(--line); }
+  .job:last-child { padding-bottom: 0; }
+  .job::before {
+    content: ""; position: absolute; left: -7px; top: .45rem; width: 12px; height: 12px;
+    border-radius: 50%; background: var(--sky); box-shadow: 0 0 0 4px var(--paper);
+  }
+  .job-head h3 { font-family: var(--display); font-weight: 700; font-size: 1.55rem; letter-spacing: -.015em; line-height: 1.2; }
+  .job-head p { margin-top: .25rem; color: var(--muted); }
+  .client { margin-top: 2rem; }
+  .client h4 { font-family: var(--display); font-weight: 600; font-size: 1.2rem; line-height: 1.25; }
+  .client .where { font-size: .95rem; color: var(--muted); margin-top: .1rem; }
+  .points { margin-top: .85rem; display: grid; gap: .55rem; max-width: 66ch; }
+  .points li { position: relative; padding-left: 1.4rem; }
+  .points li::before { content: ""; position: absolute; left: 0; top: .78em; width: .7rem; height: 2px; background: var(--teal); }
+
+  /* Agentforce */
+  .agent-flow { margin-top: 2.25rem; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; }
+  .stage { position: relative; padding: 1.4rem 1.25rem 0 0; border-top: 2px solid var(--sky); }
+  .stage::before {
+    content: ""; position: absolute; top: -7px; left: 0; width: 12px; height: 12px;
+    border-radius: 50%; background: var(--sky); box-shadow: 0 0 0 4px var(--paper);
+  }
+  .stage h3 { font-family: var(--display); font-weight: 700; font-size: 1.15rem; line-height: 1.25; }
+  .stage p { margin-top: .4rem; font-size: .98rem; color: var(--muted); }
+
+  /* Skills */
+  .skill-list { border-top: 1px solid var(--line); }
+  .skill-row { display: grid; grid-template-columns: 11.5rem 1fr; gap: 1rem 2rem; padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
+  .skill-row dt { font-family: var(--display); font-weight: 600; font-size: 1.1rem; }
+
+  /* Certifications and education */
+  .cert-list { margin-top: 1.5rem; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 2.5rem; border-top: 1px solid var(--line); }
+  .cert-list li { padding: .95rem 0 .95rem 1.9rem; border-bottom: 1px solid var(--line); position: relative; font-weight: 500; }
+  .cert-list li::before {
+    content: ""; position: absolute; left: .15rem; top: 1.3rem; width: .7rem; height: .7rem;
+    background: var(--sky); transform: rotate(45deg); border-radius: 2px;
+  }
+  .edu { margin-top: 2.75rem; }
+  .edu h3 { font-family: var(--display); font-weight: 700; font-size: 1.3rem; }
+  .edu-list { margin-top: .75rem; display: grid; gap: .9rem; }
+  .edu-list li { display: grid; grid-template-columns: 4rem 1fr; gap: 1rem; }
+  .edu-list .yr { color: var(--muted); font-variant-numeric: tabular-nums; }
+
+  /* Contact */
+  .contact { background: var(--ink); color: #E8EEF8; border-top: 0; }
+  .contact h2 { color: #fff; max-width: 18ch; }
+  .contact p.lede { color: #C7D3E6; margin-top: 1.25rem; }
+  .actions { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: .85rem; }
+  .contact-lines { margin-top: 2.5rem; display: grid; gap: .5rem; color: #C7D3E6; }
+  .contact-lines a { color: #fff; }
+  .contact-lines a:hover { color: var(--sun); }
+  .contact-lines span { display: inline-block; min-width: 5.5rem; color: #93A5C2; }
+
+  .foot { padding: 1.75rem 0 2.25rem; background: var(--ink); color: #93A5C2; font-size: .92rem; border-top: 1px solid rgba(255, 255, 255, .12); }
+
+  /* Responsive */
+  @media (max-width: 880px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .split { grid-template-columns: 1fr; }
+    .split > h2 { position: static; }
+    .facts { grid-template-columns: 1fr; }
+    .agent-flow { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 2rem; }
+    .skill-row { grid-template-columns: 1fr; gap: .25rem; }
+  }
+  @media (max-width: 560px) {
+    .site-nav a:not(.nav-cta) { padding: .45rem .6rem; }
+    .agent-flow { grid-template-columns: 1fr; }
+    .cert-list { grid-template-columns: 1fr; }
+    .job { padding-left: 1.4rem; }
+    .top-band { border-radius: 0 0 1.75rem 1.75rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .site-nav a, .btn { transition: none; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="top-band" id="top">
+  <svg class="clouds c1" viewBox="0 0 600 300" aria-hidden="true"><circle cx="120" cy="200" r="80"/><circle cx="230" cy="150" r="115"/><circle cx="350" cy="185" r="95"/><circle cx="450" cy="220" r="70"/><rect x="50" y="200" width="460" height="90" rx="45"/></svg>
+  <svg class="clouds c2" viewBox="0 0 600 300" aria-hidden="true"><circle cx="120" cy="200" r="80"/><circle cx="230" cy="150" r="115"/><circle cx="350" cy="185" r="95"/><circle cx="450" cy="220" r="70"/><rect x="50" y="200" width="460" height="90" rx="45"/></svg>
+
+  <header class="site-head">
+    <div class="wrap">
+      <a class="brand" href="#top"><span class="mark" aria-hidden="true">DB</span><span>Dheeraj Bidkar</span></a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#agentforce">Agentforce</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#credentials">Certifications</a></li>
+          <li><a class="nav-cta" href="#contact">Get in touch</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="status"><span class="dot" aria-hidden="true"></span>Open to senior developer and technical lead roles</p>
+        <h1>I build and lead Salesforce solutions for museums, clinics and staffing teams.</h1>
+        <p class="hero-sub"><strong>Senior Salesforce Developer</strong> with 5+ years on the platform. I work in Apex, Lightning Web Components, integrations and Agentforce, and I lead developers through design, review and release.</p>
+        <div class="hero-actions">
+          <a class="btn btn-main" href="#work">See my work</a>
+          <a class="btn btn-alt" href="mailto:dheerajbidkar.sfdc@gmail.com?subject=Salesforce%20role%20for%20Dheeraj">Email Dheeraj</a>
+        </div>
+      </div>
+
+      <aside class="profile-card" aria-label="Profile summary">
+        <div class="card-top">
+          <div class="avatar" aria-hidden="true">DB</div>
+          <div>
+            <strong>Dheeraj Bidkar</strong>
+            <span>Senior Salesforce Developer</span>
+          </div>
+        </div>
+        <dl class="card-rows">
+          <div class="card-row"><dt>Currently</dt><dd>Mirketa Inc, leading Salesforce developers</dd></div>
+          <div class="card-row"><dt>Experience</dt><dd>5+ years on Salesforce</dd></div>
+          <div class="card-row">
+            <dt>Salesforce certified</dt>
+            <dd>
+              <ul class="pills">
+                <li>Platform Developer</li>
+                <li>Platform Administrator</li>
+                <li>Agentforce Specialist</li>
+                <li>Agentforce Nonprofit Consultant</li>
+                <li>Data 360 Consultant</li>
+              </ul>
+            </dd>
+          </div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+</div>
+
+<main id="main">
+  <section class="section first" id="about">
+    <div class="wrap split">
+      <h2>About</h2>
+      <div>
+        <p class="lede">I started in mechanical engineering and moved into Salesforce development in 2021. Since then I have grown from building features to leading a team, reviewing code and owning the technical conversation with clients.</p>
+        <p class="lede">My recent work sits where Salesforce meets a real operation: ticketing, membership and donor management at a museum, and care coordination for healthcare providers.</p>
+        <ul class="facts">
+          <li><strong>Leads developers</strong><span>Code reviews, design reviews and mentoring on a U.S. client account.</span></li>
+          <li><strong>Ships to production</strong><span>Release management, deployments and post-release root-cause analysis.</span></li>
+          <li><strong>Works with stakeholders</strong><span>Turns business requirements into user stories and technical designs.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="work">
+    <div class="wrap split">
+      <h2>Work</h2>
+      <div>
+        <article class="job">
+          <div class="job-head">
+            <h3>Mirketa Inc., Noida</h3>
+            <p>Senior Salesforce Developer, September 2024 to present</p>
+          </div>
+
+          <div class="client">
+            <h4>MoMA, The Museum of Modern Art, New York</h4>
+            <p class="where">U.S. art and cultural institution</p>
+            <ul class="points">
+              <li>Led a team of Salesforce developers building solutions for membership, visitor engagement, ticketing, donor tracking and event management.</li>
+              <li>Led the Salesforce and Heroku integrations that exchange data with the custom web apps behind membership portals and ticketing.</li>
+              <li>Guided the team through the migration from Salesforce Classic to Lightning Experience.</li>
+              <li>Ran code reviews and technical design reviews, mentored developers, and acted as the technical point of contact for stakeholders and client teams.</li>
+              <li>Handled release management and deployments, and led root-cause analysis and production stabilization after releases.</li>
+            </ul>
+          </div>
+
+          <div class="client">
+            <h4>Lionrock Recovery</h4>
+            <p class="where">Online counselling, U.S. healthcare client</p>
+            <ul class="points">
+              <li>Supported and maintained Sales Cloud environments, including troubleshooting, bug fixes and user support.</li>
+              <li>Built custom Apex classes, triggers and Lightning components, and converted legacy Visualforce pages to Lightning.</li>
+              <li>Automated processes with Flows, Process Builders and Workflows, and managed deployments and code reviews.</li>
+            </ul>
+          </div>
+
+          <div class="client">
+            <h4>Vitra Health</h4>
+            <p class="where">U.S. home and community healthcare provider</p>
+            <ul class="points">
+              <li>Built Apex triggers, Lightning Components and Flows for care coordination and patient management workflows.</li>
+              <li>Helped migrate from Classic to Lightning and modernized legacy Visualforce pages.</li>
+              <li>Turned healthcare stakeholders' requirements into user stories, and supported care teams after deployments.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="job">
+          <div class="job-head">
+            <h3>Power Soft Global Solutions, Bangalore</h3>
+            <p>Salesforce Developer, June 2021 to September 2024</p>
+          </div>
+
+          <div class="client">
+            <h4>MSG Staffing</h4>
+            <p class="where">Staffing client</p>
+            <ul class="points">
+              <li>Built Lightning Web Components, Batch and Schedulable Apex, custom objects, record types and validation rules to fit business needs.</li>
+              <li>Integrated Salesforce with job boards, background check services and HR management systems.</li>
+              <li>Created reports and dashboards for continuous data monitoring, and tuned Apex to stay within governor limits.</li>
+              <li>Deployed with Change Sets and Data Loader, and documented code and processes for maintenance.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="agentforce">
+    <div class="wrap split">
+      <h2>Agentforce</h2>
+      <div>
+        <p class="lede">I design AI agents on Salesforce Agentforce that automate business processes and support customers, using your own Salesforce data and workflows.</p>
+        <p class="lede muted">An agent I build is made of four parts, and I treat access and security as part of each one.</p>
+        <div class="agent-flow">
+          <div class="stage">
+            <h3>Topics and subagents</h3>
+            <p>What the agent is responsible for, and how it hands work between areas.</p>
+          </div>
+          <div class="stage">
+            <h3>Instructions</h3>
+            <p>How the agent should behave and respond in each topic.</p>
+          </div>
+          <div class="stage">
+            <h3>Actions</h3>
+            <p>What it can do, including custom Apex-based actions for business logic.</p>
+          </div>
+          <div class="stage">
+            <h3>Data and access</h3>
+            <p>Which Salesforce records it can use, and who it can show them to.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="wrap split">
+      <h2>Skills</h2>
+      <dl class="skill-list">
+        <div class="skill-row"><dt>Apex and data</dt><dd>Apex classes and triggers, Batch, Schedulable and asynchronous Apex, SOQL, governor limit optimization, Apex Data Loader</dd></div>
+        <div class="skill-row"><dt>User interface</dt><dd>Lightning Web Components, Lightning Components, Visualforce pages and controllers, Lightning Design System, JavaScript, Lightning App Builder</dd></div>
+        <div class="skill-row"><dt>Automation</dt><dd>Flows, Process Builder, Workflows, validation rules, email templates</dd></div>
+        <div class="skill-row"><dt>Integration</dt><dd>REST and SOAP APIs, Named Credentials, Salesforce and Heroku, third-party applications, Postman</dd></div>
+        <div class="skill-row"><dt>AI and data</dt><dd>Agentforce, Data Cloud, Salesforce CPQ</dd></div>
+        <div class="skill-row"><dt>Platform</dt><dd>Administration, configuration, custom and standard objects, record types, reports and dashboards, the Salesforce security model</dd></div>
+        <div class="skill-row"><dt>Tools and delivery</dt><dd>VS Code, Git and GitHub, Change Sets, ANT, Workbench, Salesforce Inspector, Agile ceremonies, code reviews</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" id="credentials">
+    <div class="wrap split">
+      <h2>Certifications and education</h2>
+      <div>
+        <p class="lede">Five Salesforce Certified credentials.</p>
+        <ul class="cert-list">
+          <li>Platform Developer</li>
+          <li>Platform Administrator</li>
+          <li>Agentforce Specialist</li>
+          <li>Agentforce Nonprofit Consultant</li>
+          <li>Data 360 Consultant</li>
+        </ul>
+
+        <div class="edu">
+          <h3>Education</h3>
+          <ul class="edu-list">
+            <li><span class="yr">2020</span><span>Bachelor of Engineering<br><span class="muted">Sagar Institute of Technology and Management, Indore</span></span></li>
+            <li><span class="yr">2017</span><span>Diploma in Engineering<br><span class="muted">Vikrant Institute of Technology and Management, Indore</span></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="wrap">
+      <h2>Hiring for a senior Salesforce role?</h2>
+      <p class="lede">I am open to Senior Salesforce Developer roles that combine hands-on development with technical leadership. Send a message and I will reply with my availability.</p>
+      <div class="actions">
+        <a class="btn btn-main" href="mailto:dheerajbidkar.sfdc@gmail.com?subject=Salesforce%20role%20for%20Dheeraj">Email Dheeraj</a>
+        <a class="btn btn-alt" href="https://www.linkedin.com/in/dheeraj-b-860573175/" target="_blank" rel="noopener">View LinkedIn</a>
+      </div>
+      <div class="contact-lines">
+        <p><span>Email</span><a href="mailto:dheerajbidkar.sfdc@gmail.com">dheerajbidkar.sfdc@gmail.com</a></p>
+        <p><span>Based in</span>India</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">&copy; 2026 Dheeraj Bidkar</div>
+</footer>
+</body>
+</html>
